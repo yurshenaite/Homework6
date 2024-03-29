@@ -3,9 +3,13 @@
 # Его друг Коля отгадывает цифру из этой последовательности по ее порядковому номеру.
 # Напишите программу, помогающую Коле отгадывать цифры. Строки не использовать.
 
-k = ''
-for i in range(0, 200+1):
-    k += str(i)
-
 number = int(input('Введите число: '))
-print(k[number])
+
+def answer(number):
+    w = 0
+    for i in range(0, number):
+        w = i
+    return w
+
+ans = answer(number) - ((answer(number) // 10) * 10)
+print(ans)
